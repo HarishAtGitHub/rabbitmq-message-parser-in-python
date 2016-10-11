@@ -13,7 +13,7 @@ def main():
     logger.info('Successfully bootstrapped RabbitMQ')
     logger.info('Application Started Successfully !')
 
-    pool = Pool(5)
+    pool = Pool(POOL_SIZE)
     result = ''
     for i in range(1, NO_OF_REQUESTS_CONSUMERS+1):
         result = pool.apply_async(requests_consumer,[i])
