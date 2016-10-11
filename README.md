@@ -23,20 +23,20 @@ In case, after it processes if the processing fails, then you can do some custom
 
 Just do 
 
-```python main.py
-```
+
+    python main.py
+
 
 this configures the rabbitmq with all the queues and then runs all the consumer jobs. The number of consumer jobs is configurable. It is found in config/configuration.py
 
 
 # How to test this system ?
 
-``` 
-  python publisher.py <msg>
 
-```
+    python publisher.py <msg>
 
-Just for testing the systems' working
+
+Just for testing the system's working
 
 if the msg starts with 's' then it is a successfull message and it will be processed by one of the 'requests' consumer and the ack is sent to rabbitmq.
 
@@ -51,11 +51,9 @@ Then a consumer picks it up from there processes it. But this time it fails agai
 
 Try with the following commands
 
-```python
+    python publisher.py s123
+    python publisher.py fp123
+    python publisher.py fo123
 
-python publisher.py s123
-python publisher.py fp123
-python publisher.py fo123
 
-```
 
