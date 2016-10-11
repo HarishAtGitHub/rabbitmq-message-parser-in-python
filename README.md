@@ -27,7 +27,7 @@ Just do
     python main.py
 
 
-this configures the rabbitmq with all the queues and then runs all the consumer jobs. The number of consumer jobs is configurable. It is found in config/configuration.py
+this configures the rabbitmq with all the queues and then runs all the consumer jobs. The number of consumer jobs is configurable. It is found in config/configuration.py. Even the POOL_SIZE is configurable.
 
 
 # How to test this system ?
@@ -56,4 +56,5 @@ Try with the following commands
     python publisher.py fo123
 
 
+Tail the logs and see the output.
 
