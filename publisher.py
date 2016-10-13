@@ -10,14 +10,15 @@ message = sys.argv[1]
 try:
     connection = RabbitMQ.get_connection()
     channel = RabbitMQ.get_channel(connection)
-    channel.basic_publish(exchange=MAIN_EXCHANGE,
+    channel.confirm_delivery()
+    if channel.basic_publish(exchange=MAIN_EXCHANGE,
                           routing_key=MAIN_QUEUE_EXCHANGE_BINDING_ROUTING_KEY,
                           body=message,
                           properties=pika.BasicProperties(
-                              delivery_mode=2,  # TODO: make message persistent :tells RabbitMQ to save the message to disk(
-                              # being extra cautious - see if it has performance concerns)
-                          ))
-    print('SENT the following message ' + message)
+                              delivery_mode=2,)):
+        print('SENT the following message : ' + message + ' , to RabbitMQ')
+    else:
+        print('Message did not successfully reach rabbit mq, so let us make a note here and have it in our local storage')
     connection.close()
 except Exception as e:
     print(e)
