@@ -20,5 +20,5 @@ LOG_LEVEL='DEBUG'
 # JOB CONFIGURATION
 # ============================================================================
 NO_OF_REQUESTS_CONSUMERS=3
-NO_OF_REJECTS_CONSUMERS=1
+NO_OF_REJECTS_CONSUMERS=2
 POOL_SIZE=5
