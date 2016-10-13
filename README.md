@@ -48,15 +48,18 @@ if the msg starts with 'fo' then it is a message that fails processing in the 'r
 equests' consumer and so it reaches the 'rejects' queue.
 Then a consumer picks it up from there processes it. But this time it fails again here, so it is sent to a place decided by the user.
 
+Now to see how it works open a new screen session and tail the logs
+   
+    tail -f logs/**.log
+    
 
-Try with the following commands
+Now try with the following commands
 
     python publisher.py s123
     python publisher.py fp123
     python publisher.py fo123
 
-
-Tail the logs and see the output.
+You will get to know what exactly happens, from the logs.
 
 
 # FUTURE PLANS:
