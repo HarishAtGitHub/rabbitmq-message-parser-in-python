@@ -1,5 +1,5 @@
 # rabbitmq-message-parser-in-python
-This project is to give a solution to message consumption from rabbitmq in python
+This project is to give a solution to message consumption from rabbitmq in python and handle message processing failure cases and act in a more error-tolerant way.
 
 In this solution we have 
 
